@@ -13,14 +13,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* True Cinematic Theme */
+        /* -----------------------------------
+           1. CORE THEME & BACKGROUND
+        ----------------------------------- */
         body { 
-            background: radial-gradient(circle at center, #111827 0%, #030712 100%); 
+            background-color: #030712;
+            background-image: 
+                radial-gradient(circle at center, #111827 0%, #030712 100%),
+                linear-gradient(rgba(0, 240, 255, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 240, 255, 0.04) 1px, transparent 1px);
+            background-size: 100% 100%, 40px 40px, 40px 40px;
+            background-attachment: fixed;
         }
         
         .reveal { font-family: 'Space Grotesk', sans-serif; }
-        
-        /* Responsive Typography using Clamp */
+
+        /* Custom Neon Scrollbar applied universally to scrolling elements */
+        *::-webkit-scrollbar { width: 6px; height: 6px; }
+        *::-webkit-scrollbar-track { background: rgba(3, 7, 18, 0.8); border-radius: 10px; }
+        *::-webkit-scrollbar-thumb { background: #00f0ff; border-radius: 10px; box-shadow: 0 0 10px #00f0ff; }
+
+        /* -----------------------------------
+           2. TYPOGRAPHY
+        ----------------------------------- */
         .reveal h1, .reveal h2, .reveal h3 { 
             font-family: 'Montserrat', sans-serif; 
             font-weight: 900;
@@ -29,148 +44,206 @@
         }
 
         .reveal h1 { 
-            font-size: clamp(40px, 8vw, 100px); 
-            letter-spacing: 5px; 
-            background: linear-gradient(90deg, #00f0ff, #bd00ff);
+            font-size: clamp(36px, 7vw, 90px); 
+            letter-spacing: 6px; 
+            background: linear-gradient(90deg, #00f0ff, #bd00ff, #00f0ff);
+            background-size: 200% auto;
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0px 10px 30px rgba(0, 240, 255, 0.3);
-            margin-bottom: 20px;
+            text-shadow: 0px 10px 40px rgba(0, 240, 255, 0.4);
+            margin-bottom: 15px;
+            animation: textShine 5s linear infinite;
         }
+
+        @keyframes textShine { to { background-position: 200% center; } }
         
         .reveal h2 { 
-            font-size: clamp(28px, 4vw, 55px); 
-            margin-bottom: 15px; 
+            font-size: clamp(24px, 3.5vw, 48px); 
+            margin-bottom: 10px; 
             color: #00f0ff; 
-            text-shadow: 0 4px 15px rgba(0, 240, 255, 0.4);
+            text-shadow: 0 4px 20px rgba(0, 240, 255, 0.5);
             text-align: left;
+            border-left: 5px solid #bd00ff;
+            padding-left: 15px;
         }
         
         .reveal h3 { 
-            font-size: clamp(20px, 3vw, 35px); 
+            font-size: clamp(18px, 2.5vw, 30px); 
             color: #e2e8f0; 
-            margin-bottom: 15px; 
+            margin-bottom: 12px; 
             text-align: left; 
         }
         
         .reveal p { 
-            font-size: clamp(16px, 2vw, 26px); 
-            text-align: left; 
-            line-height: 1.4; 
-            color: #cbd5e1; 
-            margin-bottom: 15px; 
-        }
-        
-        .reveal li { 
-            font-size: clamp(16px, 1.8vw, 24px); 
+            font-size: clamp(14px, 1.5vw, 22px); 
             text-align: left; 
             line-height: 1.5; 
-            color: #f8fafc; 
+            color: #cbd5e1; 
             margin-bottom: 12px; 
         }
         
-        /* Master Container */
+        .reveal li { 
+            font-size: clamp(14px, 1.4vw, 21px); 
+            text-align: left; 
+            line-height: 1.4; 
+            color: #f8fafc; 
+            margin-bottom: 8px; 
+            padding: 6px 10px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .reveal li:hover {
+            background: rgba(0, 240, 255, 0.05);
+            transform: translateX(10px);
+            box-shadow: -3px 0 0 #00f0ff;
+        }
+        
+        /* -----------------------------------
+           3. LAYOUT & CONTAINERS
+        ----------------------------------- */
         .slide-container {
             width: 90%;
             max-width: 1400px;
+            max-height: 88vh; /* Prevents container from overflowing screen */
+            overflow-y: auto; /* Allows smooth scrolling inside the glass container if needed */
             margin: 0 auto;
             text-align: left;
-            padding: 20px 0;
+            padding: clamp(15px, 3vw, 30px);
             box-sizing: border-box;
+            background: rgba(17, 24, 39, 0.4); 
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
 
-        /* Responsive Grid Layout */
         .split-grid {
             display: grid;
             grid-template-columns: 1.2fr 1fr;
-            gap: clamp(20px, 4vw, 50px);
+            gap: clamp(20px, 3vw, 40px);
             align-items: center;
-            margin-top: clamp(15px, 3vw, 30px);
+            margin-top: clamp(10px, 2vw, 20px);
         }
 
-        /* Edge-to-Edge Images */
+        /* -----------------------------------
+           4. IMAGES & ACCENTS
+        ----------------------------------- */
         .game-img {
             width: 100%;
             height: auto;
-            max-height: 45vh; 
+            max-height: 38vh; /* Slightly reduced to save vertical space */
             object-fit: cover;
             border-radius: clamp(10px, 2vw, 20px);
-            border: 3px solid rgba(0, 240, 255, 0.4);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(189, 0, 255, 0.3);
+            border: 2px solid rgba(0, 240, 255, 0.6);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(189, 0, 255, 0.3);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .game-img:hover {
+            transform: scale(1.02) translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 240, 255, 0.5);
         }
 
         .title-img {
             border-radius: 20px; 
             border: 2px solid #00f0ff; 
-            box-shadow: 0 0 30px rgba(0,240,255,0.3); 
-            margin: clamp(15px, 3vw, 30px) auto; 
+            box-shadow: 0 0 40px rgba(0,240,255,0.4); 
+            margin: clamp(15px, 3vw, 25px) auto; 
             object-fit: cover; 
-            height: clamp(150px, 30vh, 300px); 
+            height: clamp(150px, 25vh, 280px); 
             width: 100%;
-            max-width: 800px;
+            max-width: 700px;
             display: block;
         }
 
         .reflection-img {
             border-color: #ff8c00; 
             box-shadow: 0 0 50px rgba(255, 140, 0, 0.3); 
-            max-height: 55vh !important; 
+            max-height: 45vh !important; 
             object-fit: contain;
         }
 
-        /* Accents */
-        .highlight { color: #00f0ff; font-weight: bold; }
-        .highlight-alt { color: #bd00ff; font-weight: bold; }
-        .alert { color: #ff2a5f; font-weight: bold; }
+        .highlight { color: #00f0ff; font-weight: bold; text-shadow: 0 0 10px rgba(0,240,255,0.4); }
+        .highlight-alt { color: #bd00ff; font-weight: bold; text-shadow: 0 0 10px rgba(189,0,255,0.4); }
+        .alert { color: #ff2a5f; font-weight: bold; text-shadow: 0 0 10px rgba(255,42,95,0.4); }
 
-        /* Responsive Table */
+        hr { 
+            border: none; 
+            height: 3px; 
+            background: linear-gradient(90deg, #00f0ff, #bd00ff, transparent); 
+            margin: clamp(10px, 1.5vw, 20px) 0; 
+            width: 100%; 
+            border-radius: 2px;
+            box-shadow: 0 2px 10px rgba(0, 240, 255, 0.3);
+        }
+        
+        .nav-hint { 
+            font-size: clamp(10px, 1vw, 16px) !important; 
+            color: #64748b !important; 
+            text-transform: uppercase; 
+            letter-spacing: 4px; 
+            font-weight: bold; 
+            margin-top: 15px !important;
+            display: inline-block;
+            padding: 6px 16px;
+            border: 1px solid rgba(100, 116, 139, 0.3);
+            border-radius: 30px;
+        }
+
+        /* -----------------------------------
+           5. DASHBOARD TABLE
+        ----------------------------------- */
         .table-responsive {
             width: 100%;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            background: rgba(0, 0, 0, 0.4);
+            padding: 10px;
         }
         .reveal table { 
-            font-size: clamp(14px, 1.5vw, 24px); 
+            font-size: clamp(12px, 1.3vw, 20px); 
             width: 100%; 
             min-width: 600px;
             border-collapse: collapse; 
-            margin-top: 15px; 
         }
         .reveal th, .reveal td { 
-            border-bottom: 2px solid #1e293b; 
-            padding: clamp(6px, 1vw, 15px); 
+            border-bottom: 1px solid rgba(255,255,255,0.05); 
+            padding: clamp(8px, 1vw, 14px); 
             text-align: center; 
             color: #e2e8f0; 
         }
-        .reveal th { color: #00f0ff; font-family: 'Montserrat', sans-serif; }
-        .reveal tr:hover { background-color: rgba(255, 255, 255, 0.05); }
-        
-        hr { 
-            border: none; 
-            height: 2px; 
-            background: linear-gradient(90deg, #00f0ff, transparent); 
-            margin: clamp(10px, 2vw, 20px) 0; 
-            width: 60%; 
+        .reveal th { 
+            color: #00f0ff; 
+            font-family: 'Montserrat', sans-serif; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: rgba(0, 240, 255, 0.05);
         }
-        
-        .nav-hint { 
-            font-size: clamp(12px, 1.2vw, 20px) !important; 
-            color: #64748b !important; 
-            text-transform: uppercase; 
-            letter-spacing: 3px; 
-            font-weight: bold; 
-            margin-top: 20px !important;
+        .reveal tr:hover td { 
+            background-color: rgba(189, 0, 255, 0.1); 
+            color: #fff;
         }
 
-        /* MOBILE OVERRIDES */
+        /* -----------------------------------
+           6. MOBILE OVERRIDES (Sub-992px)
+        ----------------------------------- */
         @media (max-width: 992px) {
-            /* Allow vertical scrolling on mobile slides if content overflows viewport */
             .reveal .slides section {
-                overflow-y: auto !important;
+                overflow-y: auto !important; 
                 max-height: 100% !important;
                 box-sizing: border-box;
                 padding: 10px 5px !important;
+            }
+            .slide-container { 
+                padding: 20px 15px; 
+                border-radius: 16px;
+                background: rgba(17, 24, 39, 0.8); 
+                max-height: none; /* Let the section handle scrolling on mobile */
             }
             .split-grid {
                 grid-template-columns: 1fr;
@@ -178,23 +251,27 @@
                 gap: 15px;
                 margin-top: 10px;
             }
-            .reveal h2, .reveal h3 { text-align: center; }
-            .reveal h2 { margin-bottom: 10px; }
+            .reveal h2, .reveal h3 { 
+                text-align: center; 
+                border-left: none; 
+                border-bottom: 3px solid #bd00ff; 
+                display: inline-block;
+                padding-bottom: 5px;
+                padding-left: 0;
+            }
             hr { width: 100%; margin: 10px 0; }
-            .reveal p, .reveal li { text-align: left; margin-bottom: 8px; } 
+            .reveal p { text-align: left; } 
             
-            /* Restrict image sizes dramatically on small viewports to fit alongside text */
             .game-img { 
-                max-height: 25vh !important; 
-                width: auto !important;
-                max-width: 100%;
+                max-height: 30vh !important; 
+                width: 100% !important;
+                max-width: 500px;
                 margin: 0 auto;
                 display: block;
             } 
             .reflection-img {
-                max-height: 25vh !important;
+                max-height: 30vh !important;
             }
-            .slide-container { padding: 5px 0; }
         }
     </style>
 </head>
@@ -206,10 +283,10 @@
             <section data-transition="zoom">
                 <div class="slide-container" style="text-align: center;">
                     <h1>REWIRE</h1>
-                    <h3 style="text-align: center; color: #fff;">The Spiritual Algorithm</h3>
+                    <h3 style="text-align: center; color: #fff; border-bottom: none;">The Spiritual Algorithm</h3>
                     <img src="rockypeakblog1.jpg" class="title-img" alt="Title Image">
-                    <p style="text-align: center; color: #00f0ff; font-weight: bold; text-transform: uppercase; letter-spacing: 4px;">Sports Day Master Playbook</p>
-                    <p class="nav-hint" style="text-align: center;">Swipe or Use Arrow Keys to Navigate</p>
+                    <p style="text-align: center; color: #00f0ff; font-weight: bold; text-transform: uppercase; letter-spacing: 4px; text-shadow: 0 0 10px rgba(0,240,255,0.5);">Sports Day Master Playbook</p>
+                    <p class="nav-hint">Swipe or Use Arrow Keys to Navigate</p>
                 </div>
             </section>
 
@@ -249,7 +326,7 @@
                                 <ul>
                                     <li class="fragment fade-up">Teams sprint to sort <span class="alert">RED</span> and <span class="highlight">BLUE</span> items from a central bin.</li>
                                     <li class="fragment fade-up"><span class="highlight-alt">The Twist:</span> At 2 minutes, referee yells "Algorithm updated! Only YELLOW!"</li>
-                                    <li class="fragment fade-up">If a player brings back an old color, they drop it on the grass (penalty).</li>
+                                    <li class="fragment fade-up">If a player brings back an old color, drop it on the grass (penalty).</li>
                                     <li class="fragment fade-up"><strong>Scoring:</strong> +10 pts for correct items, -5 pts for incorrect items.</li>
                                 </ul>
                                 <p class="nav-hint">Swipe/Press DOWN for Details</p>
@@ -357,7 +434,7 @@
                                 <h3>Mechanics & Rules</h3>
                                 <ul>
                                     <li class="fragment fade-up">Teams line up. Front player dunks a giant sponge in a water bucket.</li>
-                                    <li class="fragment fade-up">Pass the sponge <span class="highlight">OVER the head</span>, then the next person passes <span class="highlight">UNDER the legs</span>.</li>
+                                    <li class="fragment fade-up">Pass the sponge <span class="highlight">OVER the head</span>, then next person passes <span class="highlight">UNDER the legs</span>.</li>
                                     <li class="fragment fade-up">Last person squeezes the water into an empty bucket and runs to the front.</li>
                                 </ul>
                                 <p class="nav-hint">Swipe/Press DOWN for Details</p>
@@ -429,7 +506,7 @@
                                 <h3>Mechanics & Rules</h3>
                                 <ul>
                                     <li class="fragment fade-up">Relay style: Players sprint to place 3 items in a 3x3 grid.</li>
-                                    <li class="fragment fade-up"><span class="highlight-alt">The Twist:</span> Once all 3 items are placed, the next runners must sprint out and <em>move</em> one of their existing items.</li>
+                                    <li class="fragment fade-up"><span class="highlight-alt">The Twist:</span> Once 3 items are placed, runners must sprint out and <em>move</em> an existing item.</li>
                                     <li class="fragment fade-up">Teams constantly reposition items to block opponents and align 3-in-a-row.</li>
                                 </ul>
                                 <p class="nav-hint">Swipe/Press DOWN for Details</p>
@@ -488,7 +565,7 @@
                 <section data-transition="fade">
                     <div class="slide-container">
                         <h2>Phase 2: Going Viral</h2>
-                        <h3>4-Way Chaos Capture the Flag</h3>
+                        <h3 style="border: none;">4-Way Chaos Capture the Flag</h3>
                         <hr>
                         <div class="split-grid">
                             <div>
@@ -524,7 +601,7 @@
                 <section data-transition="slide">
                     <div class="slide-container">
                         <h2>Grand Finale: System Reboot</h2>
-                        <h3 style="color: #00f0ff;">The Ultimate Mega-Relay</h3>
+                        <h3 style="color: #00f0ff; border: none;">The Ultimate Mega-Relay</h3>
                         <hr>
                         <div class="split-grid">
                             <div>
@@ -560,16 +637,16 @@
             <section data-transition="zoom">
                 <div class="slide-container">
                     <h2>10:00 PM: Eat & Reflect</h2>
-                    <h3 style="color: #bd00ff;">Leader Discussion Guide</h3>
+                    <h3 style="color: #bd00ff; border: none;">Leader Discussion Guide</h3>
                     <hr>
                     <div class="split-grid">
                         <div>
-                            <ol>
-                                <li class="fragment fade-up"><strong>Icebreaker:</strong> "What was the hardest game? How hard was Blind Code?"</li>
-                                <li class="fragment fade-up"><strong>The Algorithm:</strong> "Your life has an algorithm: Whatever you input, becomes your output."</li>
-                                <li class="fragment fade-up"><strong>The Anchor:</strong> Read Proverbs 4:23. "Guard your heart means guarding your inputs."</li>
-                                <li class="fragment fade-up"><strong>Deep Dive:</strong> Ask about their personal "Filter Bubble" and what "Viruses" drown out God's voice.</li>
-                                <li class="fragment fade-up"><strong>The Reboot:</strong> "What is one practical thing you can do this week to reprogram your algorithm?"</li>
+                            <ol style="color: #e2e8f0; font-family: 'Space Grotesk', sans-serif; line-height: 1.5;">
+                                <li class="fragment fade-up" style="margin-bottom: 8px; padding: 5px;"><strong>Icebreaker:</strong> "What was the hardest game? How hard was Blind Code?"</li>
+                                <li class="fragment fade-up" style="margin-bottom: 8px; padding: 5px;"><strong>The Algorithm:</strong> "Your life has an algorithm: Whatever you input, becomes your output."</li>
+                                <li class="fragment fade-up" style="margin-bottom: 8px; padding: 5px;"><strong>The Anchor:</strong> Read Proverbs 4:23. "Guard your heart means guarding your inputs."</li>
+                                <li class="fragment fade-up" style="margin-bottom: 8px; padding: 5px;"><strong>Deep Dive:</strong> Ask about their personal "Filter Bubble" and what "Viruses" drown out God's voice.</li>
+                                <li class="fragment fade-up" style="margin-bottom: 8px; padding: 5px;"><strong>The Reboot:</strong> "What is one practical thing you can do this week to reprogram your algorithm?"</li>
                             </ol>
                         </div>
                         <div>
@@ -597,6 +674,7 @@
             maxScale: 1,
             transition: 'slide', 
             backgroundTransition: 'fade',
+            touch: true 
         });
     </script>
 </body>
