@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rewire: The Spiritual Algorithm</title>
+    
+    <!-- Reveal.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css">
+    
+    <!-- Premium Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* True Widescreen Cinematic Theme */
+        body { 
+            background: radial-gradient(circle at center, #111827 0%, #030712 100%); 
+        }
+        
+        .reveal { font-family: 'Space Grotesk', sans-serif; }
+        
+        /* Typography Scaled for 1920x1080 */
+        .reveal h1, .reveal h2, .reveal h3 { 
+            font-family: 'Montserrat', sans-serif; 
+            font-weight: 900;
+            text-transform: uppercase; 
+            margin-bottom: 0px;
+        }
+
+        .reveal h1 { 
+            font-size: 130px; 
+            letter-spacing: 5px; 
+            background: linear-gradient(90deg, #00f0ff, #bd00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 10px 30px rgba(0, 240, 255, 0.3);
+            margin-bottom: 20px;
+        }
+        
+        .reveal h2 { 
+            font-size: 75px; 
+            margin-bottom: 20px; 
+            color: #00f0ff; 
+            text-shadow: 0 4px 15px rgba(0, 240, 255, 0.4);
+            text-align: left;
+        }
+        
+        .reveal h3 { font-size: 45px; color: #e2e8f0; margin-bottom: 20px; text-align: left; }
+        
+        .reveal p { font-size: 38px; text-align: left; line-height: 1.4; color: #cbd5e1; margin-bottom: 20px; }
+        .reveal li { font-size: 38px; text-align: left; line-height: 1.5; color: #f8fafc; margin-bottom: 20px; }
+        
+        /* Master Container for Edge-to-Edge feel */
+        .slide-container {
+            width: 90%;
+            max-width: 1750px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        /* Flawless Grid Layout - Will never overlap */
+        .split-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        /* Stunning Edge-to-Edge Images */
+        .game-img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            border-radius: 30px;
+            border: 3px solid rgba(0, 240, 255, 0.4);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(189, 0, 255, 0.3);
+        }
+
+        /* Accents */
+        .highlight { color: #00f0ff; font-weight: bold; }
+        .highlight-alt { color: #bd00ff; font-weight: bold; }
+        .alert { color: #ff2a5f; font-weight: bold; }
+
+        /* Large Table Styling */
+        .reveal table { font-size: 32px; width: 100%; border-collapse: collapse; margin-top: 30px; }
+        .reveal th, .reveal td { border-bottom: 2px solid #1e293b; padding: 20px; text-align: center; color: #e2e8f0; }
+        .reveal th { color: #00f0ff; font-family: 'Montserrat', sans-serif; }
+        .reveal tr:hover { background-color: rgba(255, 255, 255, 0.05); }
+        
+        hr { border: none; height: 2px; background: linear-gradient(90deg, #00f0ff, transparent); margin: 30px 0; width: 60%; }
+        
+        .nav-hint { font-size: 25px !important; color: #64748b !important; text-transform: uppercase; letter-spacing: 3px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- TITLE SLIDE -->
+            <section data-transition="zoom">
+                <div class="slide-container" style="text-align: center;">
+                    <h1>REWIRE</h1>
+                    <h3 style="text-align: center; color: #fff; font-size: 60px;">The Spiritual Algorithm</h3>
+                    <img src="rockypeakblog1.jpg" style="border-radius: 20px; border: 2px solid #00f0ff; box-shadow: 0 0 30px rgba(0,240,255,0.3); margin: 40px 0; object-fit: cover; height: 350px; width: 100%;">
+                    <p style="text-align: center; color: #00f0ff; font-weight: bold; font-size: 40px; text-transform: uppercase; letter-spacing: 4px;">Sports Day Master Playbook</p>
+                    <p class="nav-hint" style="text-align: center;">Use Arrow Keys to Navigate</p>
+                </div>
+            </section>
+
+            <!-- SCHEDULE SLIDE -->
+            <section data-transition="slide">
+                <div class="slide-container">
+                    <h2>Master Schedule</h2>
+                    <hr>
+                    <div class="split-grid">
+                        <div>
+                            <ul>
+                                <li class="fragment fade-up"><span class="highlight">4:00 PM - 4:30 PM:</span> Arrival & Kickoff</li>
+                                <li class="fragment fade-up"><span class="highlight">4:30 PM - 7:00 PM:</span> Phase 1: Rotation Games</li>
+                                <li class="fragment fade-up"><span class="highlight">7:00 PM - 7:30 PM:</span> Hydration & Hype Break</li>
+                                <li class="fragment fade-up"><span class="highlight">7:30 PM - 9:30 PM:</span> Phase 2: Big Battles & Finale</li>
+                                <li class="fragment fade-up"><span class="highlight">9:30 PM - 10:00 PM:</span> Dinner Distribution</li>
+                                <li class="fragment fade-up"><span class="highlight">10:00 PM - 11:00 PM:</span> Eat & Reflect</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <img src="241023header-multiple-time-zone-scheduling.png" class="game-img" alt="Digital Schedule">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GAME 1: FILTER BUBBLE -->
+            <section>
+                <section data-transition="slide">
+                    <div class="slide-container">
+                        <h2>Game 1: The Filter Bubble</h2>
+                        <p><strong>Goal:</strong> Fast-paced physical sorting where the rules suddenly change.</p>
+                        <hr>
+                        <div class="split-grid">
+                            <div>
+                                <h3>Mechanics & Rules</h3>
+                                <ul>
+                                    <li class="fragment fade-up">Teams sprint to sort <span class="alert">RED</span> and <span class="highlight">BLUE</span> items from a central bin.</li>
+                                    <li class="fragment fade-up"><span class="highlight-alt">The Twist:</span> At 2 minutes, referee yells "Algorithm updated! Only YELLOW!"</li>
+                                    <li class="fragment fade-up">If a player brings back an old color, they drop it on the grass (penalty).</li>
+                                    <li class="fragment fade-up"><strong>Scoring:</strong> +10 pts for correct items, -5 pts for incorrect items.</li>
+                                </ul>
+                                <p class="nav-hint">Press DOWN for Details</p>
+                            </div>
+                            <div>
+                                <img src="Color-pom-pom-sensory-sort-1-scaled.jpg" class="game-img" alt="Sorting Algorithm Balls">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="slide-container">
+                        <h2>The Filter Bubble: Details</h2>
+                        <hr>
+                        <ul>
+                            <li class="fragment fade-right"><strong>Materials:</strong> 1 Large Bin, 200+ Mixed Colored Items, 2 Empty Buckets.</li>
+                            <li class="fragment fade-right"><strong>Referees:</strong> 1 Main Ref (time/rules), 2 Bucket Refs (guard buckets).</li>
+                            <li class="fragment fade-right"><strong>Reflection Link:</strong> "Did you notice how frustrating it was when the rules changed? Algorithms put you in a bubble based on hidden rules... Who is writing the algorithm for your heart? (Proverbs 4:23)"</li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+
+            <!-- GAME 2: BLIND CODE -->
+            <section>
+                <section data-transition="convex">
+                    <div class="slide-container">
+                        <h2>Game 2: Blind Code</h2>
+                        <p><strong>Goal:</strong> Navigating a physical maze blindfolded, ignoring the "Viruses."</p>
+                        <hr>
+                        <div class="split-grid">
+                            <div>
+                                <h3>Mechanics & Rules</h3>
+                                <ul>
+                                    <li class="fragment fade-up">One player is blindfolded. Their "Programmer" stands on a chair and yells commands.</li>
+                                    <li class="fragment fade-up"><span class="highlight-alt">The Twist:</span> Opposing team acts as "Viruses," screaming fake instructions to confuse the runner.</li>
+                                    <li class="fragment fade-up">If the runner hits an obstacle, they must restart.</li>
+                                </ul>
+                                <p class="nav-hint">Press DOWN for Details</p>
+                            </div>
+                            <div>
+                                <img src="StockCake-Blindfolded_Maze_Challenge-1003455-medium.jpg" class="game-img" alt="Blind Maze Runner">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="slide-container">
+                        <h2>Blind Code: Details</h2>
+                        <hr>
+                        <ul>
+                            <li class="fragment fade-right"><strong>Materials:</strong> 10-15 Blindfolds, 30+ Obstacles (cones/noodles), 2 Chairs.</li>
+                            <li class="fragment fade-right"><strong>Referees:</strong> 1 Main Ref. Team Leaders act as safety spotters.</li>
+                            <li class="fragment fade-right"><strong>Reflection Link:</strong> "How hard was it to hear the right voice? The world's algorithm acts like a loud virus... What viruses do you need to mute to hear God?"</li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+
+            <!-- GAME 3: ECHO CHAMBER -->
+            <section>
+                <section data-transition="concave">
+                    <div class="slide-container">
+                        <h2>Game 3: Echo Chamber</h2>
+                        <p><strong>Goal:</strong> Chaotic dodgeball that shows how one idea takes over a network.</p>
+                        <hr>
+                        <div class="split-grid">
+                            <div>
+                                <h3>Mechanics & Rules</h3>
+                                <ul>
+                                    <li class="fragment fade-up">Standard dodgeball rules, but no one is eliminated.</li>
+                                    <li class="fragment fade-up"><span class="highlight-alt">The Twist:</span> When hit, you instantly switch sides and play for the team that hit you.</li>
+                                    <li class="fragment fade-up">The game cascades until one side absorbs the other (an Echo Chamber).</li>
+                                </ul>
+                                <p class="nav-hint">Press DOWN for Details</p>
+                            </div>
+                            <div>
+                                <img src="dodgeball-cast-reunion-video-omaze.jpg" class="game-img" alt="Neon Dodgeball">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="slide-container">
+                        <h2>Echo Chamber: Details</h2>
+                        <hr>
+                        <ul>
+                            <li class="fragment fade-right"><strong>Materials:</strong> 10-15 Soft Dodgeballs, Boundary Cones.</li>
+                            <li class="fragment fade-right"><strong>Referees:</strong> 1 Main Ref to enforce team-switching.</li>
+                            <li class="fragment fade-right"><strong>Reflection Link:</strong> "If you only follow people who think exactly like you, your feed becomes a massive echo chamber. Are you open to listening to others?"</li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+
+            <!-- GAME 4: VIRAL TREND -->
+            <section>
+                <section data-transition="slide">
+                    <div class="slide-container">
+                        <h2>Game 4: The Viral Trend</h2>
+                        <p><strong>Goal:</strong> High-energy water sponge relay to build morale and cool down.</p>
+                        <hr>
+                        <div class="split-grid">
+                            <div>
+                                <h3>Mechanics & Rules</h3>
+                                <ul>
+                                    <li class="fragment fade-up">Teams line up. Front player dunks a giant sponge in a water bucket.</li>
+                                    <li class="fragment fade-up">Pass the sponge <span class="highlight">OVER the head</span>, then the next person passes <span class="highlight">UNDER the legs</span>.</li>
+                                    <li class="fragment fade-up">Last person squeezes the water into an empty bucket and runs to the front.</li>
+                                </ul>
+                                <p class="nav-hint">Press DOWN for Details</p>
+                            </div>
+                            <div>
+                                <img src="view-water-splash_23-2150718458.avif" class="game-img" alt="Viral Water Splash">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="slide-container">
+                        <h2>The Viral Trend: Details</h2>
+                        <hr>
+                        <ul>
+                            <li class="fragment fade-right"><strong>Materials:</strong> 2 Giant Sponges, 4 Large Buckets, Access to a hose.</li>
+                            <li class="fragment fade-right"><strong>Referees:</strong> 1 Ref to enforce over/under rule. Leaders refill water.</li>
+                            <li class="fragment fade-right"><strong>Reflection Link:</strong> "Like that sponge, we pass on what we consume. Are you passing on a viral trend of kindness, or gossip and negativity?"</li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+
+            <!-- GAME 5: THE FIREWALL -->
+            <section>
+                <section data-transition="zoom">
+                    <div class="slide-container">
+                        <h2>Game 5: The Firewall</h2>
+                        <p><strong>Goal:</strong> Attack & defense game representing protecting the mind from influences.</p>
+                        <hr>
+                        <div class="split-grid">
+                            <div>
+                                <h3>Mechanics & Rules</h3>
+                                <ul>
+                                    <li class="fragment fade-up">Team A defends a middle zone (The Firewall).</li>
+                                    <li class="fragment fade-up">Team B grabs "Data Packets" and sprints to cross the firewall.</li>
+                                    <li class="fragment fade-up"><span class="alert">Defense:</span> If tagged inside the firewall, Team B must drop the packet and run back.</li>
+                                </ul>
+                                <p class="nav-hint">Press DOWN for Details</p>
+                            </div>
+                            <div>
+                                <img src="cyber-defense.jpg" class="game-img" alt="Cyber Firewall">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="slide-container">
+                        <h2>The Firewall: Details</h2>
+                        <hr>
+                        <ul>
+                            <li class="fragment fade-right"><strong>Materials:</strong> 40 "Data Packets" (tennis balls), 4 Buckets, Cones.</li>
+                            <li class="fragment fade-right"><strong>Referees:</strong> 1 Ref for time and tag calls.</li>
+                            <li class="fragment fade-right"><strong>Reflection Link:</strong> "Your mind is a firewall. The world constantly tries to push 'data packets' past your defenses. Are you an active firewall?"</li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+
+            <!-- GAME 6: THE PATTERN TRAP -->
+            <section>
+                <section data-transition="convex">
+                    <div class="slide-container">
+                        <h2>Game 6: The Pattern Trap</h2>
+                        <p><strong>Goal:</strong> A frantic Tic-Tac-Toe sprint combined with quick thinking.</p>
+                        <hr>
+                        <div class="split-grid">
+                            <div>
+                                <h3>Mechanics & Rules</h3>
+                                <ul>
+                                    <li class="fragment fade-up">Relay style: Players sprint to place 3 items in a 3x3 grid.</li>
+                                    <li class="fragment fade-up"><span class="highlight-alt">The Twist:</span> Once all 3 items are placed, the next runners must sprint out and <em>move</em> one of their existing items.</li>
+                                    <li class="fragment fade-up">Teams constantly reposition items to block opponents and align 3-in-a-row.</li>
+                                </ul>
+                                <p class="nav-hint">Press DOWN for Details</p>
+                            </div>
+                            <div>
+                                <img src="neon-grid-matrix-stockcake.webp" class="game-img" alt="Neon Grid">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="slide-container">
+                        <h2>The Pattern Trap: Details</h2>
+                        <hr>
+                        <ul>
+                            <li class="fragment fade-right"><strong>Materials:</strong> 9 Hula Hoops, 6 Colored items (3 per team).</li>
+                            <li class="fragment fade-right"><strong>Referees:</strong> 1 Ref to declare winner and reset the board.</li>
+                            <li class="fragment fade-right"><strong>Reflection Link:</strong> "Social media traps you in patterns. Sometimes we get stuck in bad habits. To win, you had to stop running blindly and break the pattern."</li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+
+            <!-- ROTATION SCHEDULE -->
+            <section>
+                <div class="slide-container">
+                    <h2>Phase 1: Rotation Schedule</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Time Block</th>
+                                <th>A (Filter)</th>
+                                <th>B (Code)</th>
+                                <th>C (Echo)</th>
+                                <th>D (Viral)</th>
+                                <th>E (Firewall)</th>
+                                <th>F (Pattern)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>4:30 - 4:55</td><td>1 vs 7</td><td>2 vs 8</td><td>3 vs 9</td><td>4 vs 10</td><td>5 vs 11</td><td>6 vs 12</td></tr>
+                            <tr><td>4:55 - 5:20</td><td>6 vs 8</td><td>1 vs 9</td><td>2 vs 10</td><td>3 vs 11</td><td>4 vs 12</td><td>5 vs 7</td></tr>
+                            <tr><td>5:20 - 5:45</td><td>5 vs 9</td><td>6 vs 10</td><td>1 vs 11</td><td>2 vs 12</td><td>3 vs 7</td><td>4 vs 8</td></tr>
+                            <tr><td>5:45 - 6:10</td><td>4 vs 10</td><td>5 vs 11</td><td>6 vs 12</td><td>1 vs 7</td><td>2 vs 8</td><td>3 vs 9</td></tr>
+                            <tr><td>6:10 - 6:35</td><td>3 vs 11</td><td>4 vs 12</td><td>5 vs 7</td><td>6 vs 8</td><td>1 vs 9</td><td>2 vs 10</td></tr>
+                            <tr><td>6:35 - 7:00</td><td>2 vs 12</td><td>3 vs 7</td><td>4 vs 8</td><td>5 vs 9</td><td>6 vs 10</td><td>1 vs 11</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- PHASE 2: GOING VIRAL -->
+            <section>
+                <section data-transition="fade">
+                    <div class="slide-container">
+                        <h2>Phase 2: Going Viral</h2>
+                        <h3>4-Way Chaos Capture the Flag</h3>
+                        <hr>
+                        <div class="split-grid">
+                            <div>
+                                <p><strong>Setup:</strong> Teams combine into 4 Networks (42 players each). Field is divided into 4 quadrants.</p>
+                                <ul>
+                                    <li class="fragment fade-up">Players sprint into enemy quadrants to steal Data.</li>
+                                    <li class="fragment fade-up"><span class="alert">Glitch Rule:</span> If tagged in enemy territory, you are "Frozen" and must stand with hands up.</li>
+                                    <li class="fragment fade-up">A teammate must tag you to unfreeze you.</li>
+                                </ul>
+                                <p class="nav-hint">Press DOWN for Details</p>
+                            </div>
+                            <div>
+                                <img src="360_F_254979236_rH1eyiNIh8xFtDK0Gu4e04hBX2bCpqEX.jpg" class="game-img" alt="Capture the Flag Network">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="slide-container">
+                        <h2>Going Viral: Details</h2>
+                        <hr>
+                        <ul>
+                            <li class="fragment fade-right"><strong>Materials:</strong> 80 "Data Items" (4 colors), 4 Data Centers (Boxes), Boundary Cones.</li>
+                            <li class="fragment fade-right"><strong>Referees:</strong> 4 Referees (one per quadrant to enforce "frozen" rules).</li>
+                            <li class="fragment fade-right"><strong>Reflection Link:</strong> "When something goes viral, it influences everyone it touches. What kind of influence are you spreading in your friend groups?"</li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+
+            <!-- GRAND FINALE -->
+            <section>
+                <section data-transition="slide">
+                    <div class="slide-container">
+                        <h2>Grand Finale: System Reboot</h2>
+                        <h3 style="color: #00f0ff;">The Ultimate Mega-Relay</h3>
+                        <hr>
+                        <div class="split-grid">
+                            <div>
+                                <p>All 12 teams line up in parallel lanes. Every player participates.</p>
+                                <ul>
+                                    <li class="fragment fade-up"><strong>Stage 1:</strong> Clear Cache. Pop 10 balloons.</li>
+                                    <li class="fragment fade-up"><strong>Stage 2:</strong> Reroute Cables. Crawl under nets.</li>
+                                    <li class="fragment fade-up"><strong>Stage 3:</strong> Secure Connection. Balance water on a frisbee.</li>
+                                    <li class="fragment fade-up"><strong>Stage 4:</strong> Write New Code. Assemble Proverbs 4:23. First to shout it wins!</li>
+                                </ul>
+                                <p class="nav-hint">Press DOWN for Details</p>
+                            </div>
+                            <div>
+                                <img src="relay-runners-exchanging-baton-track-dynamic-sports-illustration-with-teal-orange-uniforms_681100-1678.avif" class="game-img" alt="Relay Obstacle Course">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="slide-container">
+                        <h2>System Reboot: Details</h2>
+                        <hr>
+                        <ul>
+                            <li class="fragment fade-right"><strong>Materials:</strong> 120 Balloons, Crawling nets, 12 Cups/Frisbees, 12 Envelopes with puzzles.</li>
+                            <li class="fragment fade-right"><strong>Referees:</strong> 6 to 12 Referees spread across the lanes to ensure no cheating.</li>
+                            <li class="fragment fade-right"><strong>Outcome:</strong> This physically exhausting race ends with them shouting the core verse, leading perfectly into dinner.</li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+
+            <!-- REFLECTION -->
+            <section data-transition="zoom">
+                <div class="slide-container">
+                    <h2>10:00 PM: Eat & Reflect</h2>
+                    <h3 style="color: #bd00ff;">Leader Discussion Guide</h3>
+                    <hr>
+                    <div class="split-grid">
+                        <div>
+                            <ol>
+                                <li class="fragment fade-up"><strong>Icebreaker:</strong> "What was the hardest game? How hard was Blind Code?"</li>
+                                <li class="fragment fade-up"><strong>The Algorithm:</strong> "Your life has an algorithm: Whatever you input, becomes your output."</li>
+                                <li class="fragment fade-up"><strong>The Anchor:</strong> Read Proverbs 4:23. "Guard your heart means guarding your inputs."</li>
+                                <li class="fragment fade-up"><strong>Deep Dive:</strong> Ask about their personal "Filter Bubble" and what "Viruses" drown out God's voice.</li>
+                                <li class="fragment fade-up"><strong>The Reboot:</strong> "What is one practical thing you can do this week to reprogram your algorithm?"</li>
+                            </ol>
+                        </div>
+                        <div>
+                            <img src="d82de961a4981796041ef7625e88b59c.jpg" class="game-img" style="border-color: #ff8c00; box-shadow: 0 0 50px rgba(255, 140, 0, 0.3); height: 800px; width: 100%; object-fit: contain;" alt="Youth Reflection Circle">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Reveal.js Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+    <script>
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            center: true,
+            hash: true,
+            // Guaranteed Widescreen Resolution
+            width: 1920,      
+            height: 1080,      
+            margin: 0.06,      
+            minScale: 0.2,
+            maxScale: 2.0,
+            transition: 'slide', 
+            backgroundTransition: 'fade',
+        });
+    </script>
+</body>
+</html>
