@@ -33,7 +33,7 @@
             letter-spacing: 5px; 
             background: linear-gradient(90deg, #00f0ff, #bd00ff);
             -webkit-background-clip: text;
-            background-clip: text; /* Standard property added */
+            background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: 0px 10px 30px rgba(0, 240, 255, 0.3);
             margin-bottom: 20px;
@@ -93,7 +93,7 @@
         .game-img {
             width: 100%;
             height: auto;
-            max-height: 45vh; /* Prevents vertical overflow on desktop */
+            max-height: 45vh; 
             object-fit: cover;
             border-radius: clamp(10px, 2vw, 20px);
             border: 3px solid rgba(0, 240, 255, 0.4);
@@ -165,16 +165,36 @@
 
         /* MOBILE OVERRIDES */
         @media (max-width: 992px) {
+            /* Allow vertical scrolling on mobile slides if content overflows viewport */
+            .reveal .slides section {
+                overflow-y: auto !important;
+                max-height: 100% !important;
+                box-sizing: border-box;
+                padding: 10px 5px !important;
+            }
             .split-grid {
                 grid-template-columns: 1fr;
                 text-align: center;
-                gap: 20px;
+                gap: 15px;
+                margin-top: 10px;
             }
             .reveal h2, .reveal h3 { text-align: center; }
-            hr { width: 100%; margin: 15px 0; }
-            .reveal p, .reveal li { text-align: left; } 
-            .game-img { max-height: 30vh; } 
-            .slide-container { padding: 10px 0; }
+            .reveal h2 { margin-bottom: 10px; }
+            hr { width: 100%; margin: 10px 0; }
+            .reveal p, .reveal li { text-align: left; margin-bottom: 8px; } 
+            
+            /* Restrict image sizes dramatically on small viewports to fit alongside text */
+            .game-img { 
+                max-height: 25vh !important; 
+                width: auto !important;
+                max-width: 100%;
+                margin: 0 auto;
+                display: block;
+            } 
+            .reflection-img {
+                max-height: 25vh !important;
+            }
+            .slide-container { padding: 5px 0; }
         }
     </style>
 </head>
