@@ -13,14 +13,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* True Widescreen Cinematic Theme */
+        /* True Cinematic Theme */
         body { 
             background: radial-gradient(circle at center, #111827 0%, #030712 100%); 
         }
         
         .reveal { font-family: 'Space Grotesk', sans-serif; }
         
-        /* Typography Scaled for 1920x1080 */
+        /* Responsive Typography using Clamp */
         .reveal h1, .reveal h2, .reveal h3 { 
             font-family: 'Montserrat', sans-serif; 
             font-weight: 900;
@@ -29,53 +29,94 @@
         }
 
         .reveal h1 { 
-            font-size: 130px; 
+            font-size: clamp(40px, 8vw, 100px); 
             letter-spacing: 5px; 
             background: linear-gradient(90deg, #00f0ff, #bd00ff);
             -webkit-background-clip: text;
+            background-clip: text; /* Standard property added */
             -webkit-text-fill-color: transparent;
             text-shadow: 0px 10px 30px rgba(0, 240, 255, 0.3);
             margin-bottom: 20px;
         }
         
         .reveal h2 { 
-            font-size: 75px; 
-            margin-bottom: 20px; 
+            font-size: clamp(28px, 4vw, 55px); 
+            margin-bottom: 15px; 
             color: #00f0ff; 
             text-shadow: 0 4px 15px rgba(0, 240, 255, 0.4);
             text-align: left;
         }
         
-        .reveal h3 { font-size: 45px; color: #e2e8f0; margin-bottom: 20px; text-align: left; }
+        .reveal h3 { 
+            font-size: clamp(20px, 3vw, 35px); 
+            color: #e2e8f0; 
+            margin-bottom: 15px; 
+            text-align: left; 
+        }
         
-        .reveal p { font-size: 38px; text-align: left; line-height: 1.4; color: #cbd5e1; margin-bottom: 20px; }
-        .reveal li { font-size: 38px; text-align: left; line-height: 1.5; color: #f8fafc; margin-bottom: 20px; }
+        .reveal p { 
+            font-size: clamp(16px, 2vw, 26px); 
+            text-align: left; 
+            line-height: 1.4; 
+            color: #cbd5e1; 
+            margin-bottom: 15px; 
+        }
         
-        /* Master Container for Edge-to-Edge feel */
+        .reveal li { 
+            font-size: clamp(16px, 1.8vw, 24px); 
+            text-align: left; 
+            line-height: 1.5; 
+            color: #f8fafc; 
+            margin-bottom: 12px; 
+        }
+        
+        /* Master Container */
         .slide-container {
             width: 90%;
-            max-width: 1750px;
+            max-width: 1400px;
             margin: 0 auto;
             text-align: left;
+            padding: 20px 0;
+            box-sizing: border-box;
         }
 
-        /* Flawless Grid Layout - Will never overlap */
+        /* Responsive Grid Layout */
         .split-grid {
             display: grid;
-            grid-template-columns: 1.3fr 1fr;
-            gap: 80px;
+            grid-template-columns: 1.2fr 1fr;
+            gap: clamp(20px, 4vw, 50px);
             align-items: center;
-            margin-top: 40px;
+            margin-top: clamp(15px, 3vw, 30px);
         }
 
-        /* Stunning Edge-to-Edge Images */
+        /* Edge-to-Edge Images */
         .game-img {
             width: 100%;
-            height: 600px;
+            height: auto;
+            max-height: 45vh; /* Prevents vertical overflow on desktop */
             object-fit: cover;
-            border-radius: 30px;
+            border-radius: clamp(10px, 2vw, 20px);
             border: 3px solid rgba(0, 240, 255, 0.4);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(189, 0, 255, 0.3);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(189, 0, 255, 0.3);
+        }
+
+        .title-img {
+            border-radius: 20px; 
+            border: 2px solid #00f0ff; 
+            box-shadow: 0 0 30px rgba(0,240,255,0.3); 
+            margin: clamp(15px, 3vw, 30px) auto; 
+            object-fit: cover; 
+            height: clamp(150px, 30vh, 300px); 
+            width: 100%;
+            max-width: 800px;
+            display: block;
+        }
+
+        .reflection-img {
+            border-color: #ff8c00; 
+            box-shadow: 0 0 50px rgba(255, 140, 0, 0.3); 
+            max-height: 55vh !important; 
+            object-fit: contain;
         }
 
         /* Accents */
@@ -83,15 +124,58 @@
         .highlight-alt { color: #bd00ff; font-weight: bold; }
         .alert { color: #ff2a5f; font-weight: bold; }
 
-        /* Large Table Styling */
-        .reveal table { font-size: 32px; width: 100%; border-collapse: collapse; margin-top: 30px; }
-        .reveal th, .reveal td { border-bottom: 2px solid #1e293b; padding: 20px; text-align: center; color: #e2e8f0; }
+        /* Responsive Table */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        .reveal table { 
+            font-size: clamp(14px, 1.5vw, 24px); 
+            width: 100%; 
+            min-width: 600px;
+            border-collapse: collapse; 
+            margin-top: 15px; 
+        }
+        .reveal th, .reveal td { 
+            border-bottom: 2px solid #1e293b; 
+            padding: clamp(6px, 1vw, 15px); 
+            text-align: center; 
+            color: #e2e8f0; 
+        }
         .reveal th { color: #00f0ff; font-family: 'Montserrat', sans-serif; }
         .reveal tr:hover { background-color: rgba(255, 255, 255, 0.05); }
         
-        hr { border: none; height: 2px; background: linear-gradient(90deg, #00f0ff, transparent); margin: 30px 0; width: 60%; }
+        hr { 
+            border: none; 
+            height: 2px; 
+            background: linear-gradient(90deg, #00f0ff, transparent); 
+            margin: clamp(10px, 2vw, 20px) 0; 
+            width: 60%; 
+        }
         
-        .nav-hint { font-size: 25px !important; color: #64748b !important; text-transform: uppercase; letter-spacing: 3px; font-weight: bold; }
+        .nav-hint { 
+            font-size: clamp(12px, 1.2vw, 20px) !important; 
+            color: #64748b !important; 
+            text-transform: uppercase; 
+            letter-spacing: 3px; 
+            font-weight: bold; 
+            margin-top: 20px !important;
+        }
+
+        /* MOBILE OVERRIDES */
+        @media (max-width: 992px) {
+            .split-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 20px;
+            }
+            .reveal h2, .reveal h3 { text-align: center; }
+            hr { width: 100%; margin: 15px 0; }
+            .reveal p, .reveal li { text-align: left; } 
+            .game-img { max-height: 30vh; } 
+            .slide-container { padding: 10px 0; }
+        }
     </style>
 </head>
 <body>
@@ -102,10 +186,10 @@
             <section data-transition="zoom">
                 <div class="slide-container" style="text-align: center;">
                     <h1>REWIRE</h1>
-                    <h3 style="text-align: center; color: #fff; font-size: 60px;">The Spiritual Algorithm</h3>
-                    <img src="rockypeakblog1.jpg" style="border-radius: 20px; border: 2px solid #00f0ff; box-shadow: 0 0 30px rgba(0,240,255,0.3); margin: 40px 0; object-fit: cover; height: 350px; width: 100%;">
-                    <p style="text-align: center; color: #00f0ff; font-weight: bold; font-size: 40px; text-transform: uppercase; letter-spacing: 4px;">Sports Day Master Playbook</p>
-                    <p class="nav-hint" style="text-align: center;">Use Arrow Keys to Navigate</p>
+                    <h3 style="text-align: center; color: #fff;">The Spiritual Algorithm</h3>
+                    <img src="rockypeakblog1.jpg" class="title-img" alt="Title Image">
+                    <p style="text-align: center; color: #00f0ff; font-weight: bold; text-transform: uppercase; letter-spacing: 4px;">Sports Day Master Playbook</p>
+                    <p class="nav-hint" style="text-align: center;">Swipe or Use Arrow Keys to Navigate</p>
                 </div>
             </section>
 
@@ -148,7 +232,7 @@
                                     <li class="fragment fade-up">If a player brings back an old color, they drop it on the grass (penalty).</li>
                                     <li class="fragment fade-up"><strong>Scoring:</strong> +10 pts for correct items, -5 pts for incorrect items.</li>
                                 </ul>
-                                <p class="nav-hint">Press DOWN for Details</p>
+                                <p class="nav-hint">Swipe/Press DOWN for Details</p>
                             </div>
                             <div>
                                 <img src="Color-pom-pom-sensory-sort-1-scaled.jpg" class="game-img" alt="Sorting Algorithm Balls">
@@ -184,7 +268,7 @@
                                     <li class="fragment fade-up"><span class="highlight-alt">The Twist:</span> Opposing team acts as "Viruses," screaming fake instructions to confuse the runner.</li>
                                     <li class="fragment fade-up">If the runner hits an obstacle, they must restart.</li>
                                 </ul>
-                                <p class="nav-hint">Press DOWN for Details</p>
+                                <p class="nav-hint">Swipe/Press DOWN for Details</p>
                             </div>
                             <div>
                                 <img src="StockCake-Blindfolded_Maze_Challenge-1003455-medium.jpg" class="game-img" alt="Blind Maze Runner">
@@ -220,7 +304,7 @@
                                     <li class="fragment fade-up"><span class="highlight-alt">The Twist:</span> When hit, you instantly switch sides and play for the team that hit you.</li>
                                     <li class="fragment fade-up">The game cascades until one side absorbs the other (an Echo Chamber).</li>
                                 </ul>
-                                <p class="nav-hint">Press DOWN for Details</p>
+                                <p class="nav-hint">Swipe/Press DOWN for Details</p>
                             </div>
                             <div>
                                 <img src="dodgeball-cast-reunion-video-omaze.jpg" class="game-img" alt="Neon Dodgeball">
@@ -256,7 +340,7 @@
                                     <li class="fragment fade-up">Pass the sponge <span class="highlight">OVER the head</span>, then the next person passes <span class="highlight">UNDER the legs</span>.</li>
                                     <li class="fragment fade-up">Last person squeezes the water into an empty bucket and runs to the front.</li>
                                 </ul>
-                                <p class="nav-hint">Press DOWN for Details</p>
+                                <p class="nav-hint">Swipe/Press DOWN for Details</p>
                             </div>
                             <div>
                                 <img src="view-water-splash_23-2150718458.avif" class="game-img" alt="Viral Water Splash">
@@ -292,7 +376,7 @@
                                     <li class="fragment fade-up">Team B grabs "Data Packets" and sprints to cross the firewall.</li>
                                     <li class="fragment fade-up"><span class="alert">Defense:</span> If tagged inside the firewall, Team B must drop the packet and run back.</li>
                                 </ul>
-                                <p class="nav-hint">Press DOWN for Details</p>
+                                <p class="nav-hint">Swipe/Press DOWN for Details</p>
                             </div>
                             <div>
                                 <img src="cyber-defense.jpg" class="game-img" alt="Cyber Firewall">
@@ -328,7 +412,7 @@
                                     <li class="fragment fade-up"><span class="highlight-alt">The Twist:</span> Once all 3 items are placed, the next runners must sprint out and <em>move</em> one of their existing items.</li>
                                     <li class="fragment fade-up">Teams constantly reposition items to block opponents and align 3-in-a-row.</li>
                                 </ul>
-                                <p class="nav-hint">Press DOWN for Details</p>
+                                <p class="nav-hint">Swipe/Press DOWN for Details</p>
                             </div>
                             <div>
                                 <img src="neon-grid-matrix-stockcake.webp" class="game-img" alt="Neon Grid">
@@ -353,27 +437,29 @@
             <section>
                 <div class="slide-container">
                     <h2>Phase 1: Rotation Schedule</h2>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Time Block</th>
-                                <th>A (Filter)</th>
-                                <th>B (Code)</th>
-                                <th>C (Echo)</th>
-                                <th>D (Viral)</th>
-                                <th>E (Firewall)</th>
-                                <th>F (Pattern)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>4:30 - 4:55</td><td>1 vs 7</td><td>2 vs 8</td><td>3 vs 9</td><td>4 vs 10</td><td>5 vs 11</td><td>6 vs 12</td></tr>
-                            <tr><td>4:55 - 5:20</td><td>6 vs 8</td><td>1 vs 9</td><td>2 vs 10</td><td>3 vs 11</td><td>4 vs 12</td><td>5 vs 7</td></tr>
-                            <tr><td>5:20 - 5:45</td><td>5 vs 9</td><td>6 vs 10</td><td>1 vs 11</td><td>2 vs 12</td><td>3 vs 7</td><td>4 vs 8</td></tr>
-                            <tr><td>5:45 - 6:10</td><td>4 vs 10</td><td>5 vs 11</td><td>6 vs 12</td><td>1 vs 7</td><td>2 vs 8</td><td>3 vs 9</td></tr>
-                            <tr><td>6:10 - 6:35</td><td>3 vs 11</td><td>4 vs 12</td><td>5 vs 7</td><td>6 vs 8</td><td>1 vs 9</td><td>2 vs 10</td></tr>
-                            <tr><td>6:35 - 7:00</td><td>2 vs 12</td><td>3 vs 7</td><td>4 vs 8</td><td>5 vs 9</td><td>6 vs 10</td><td>1 vs 11</td></tr>
-                        </tbody>
-                    </table>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Time Block</th>
+                                    <th>A (Filter)</th>
+                                    <th>B (Code)</th>
+                                    <th>C (Echo)</th>
+                                    <th>D (Viral)</th>
+                                    <th>E (Firewall)</th>
+                                    <th>F (Pattern)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>4:30 - 4:55</td><td>1 vs 7</td><td>2 vs 8</td><td>3 vs 9</td><td>4 vs 10</td><td>5 vs 11</td><td>6 vs 12</td></tr>
+                                <tr><td>4:55 - 5:20</td><td>6 vs 8</td><td>1 vs 9</td><td>2 vs 10</td><td>3 vs 11</td><td>4 vs 12</td><td>5 vs 7</td></tr>
+                                <tr><td>5:20 - 5:45</td><td>5 vs 9</td><td>6 vs 10</td><td>1 vs 11</td><td>2 vs 12</td><td>3 vs 7</td><td>4 vs 8</td></tr>
+                                <tr><td>5:45 - 6:10</td><td>4 vs 10</td><td>5 vs 11</td><td>6 vs 12</td><td>1 vs 7</td><td>2 vs 8</td><td>3 vs 9</td></tr>
+                                <tr><td>6:10 - 6:35</td><td>3 vs 11</td><td>4 vs 12</td><td>5 vs 7</td><td>6 vs 8</td><td>1 vs 9</td><td>2 vs 10</td></tr>
+                                <tr><td>6:35 - 7:00</td><td>2 vs 12</td><td>3 vs 7</td><td>4 vs 8</td><td>5 vs 9</td><td>6 vs 10</td><td>1 vs 11</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </section>
 
@@ -392,7 +478,7 @@
                                     <li class="fragment fade-up"><span class="alert">Glitch Rule:</span> If tagged in enemy territory, you are "Frozen" and must stand with hands up.</li>
                                     <li class="fragment fade-up">A teammate must tag you to unfreeze you.</li>
                                 </ul>
-                                <p class="nav-hint">Press DOWN for Details</p>
+                                <p class="nav-hint">Swipe/Press DOWN for Details</p>
                             </div>
                             <div>
                                 <img src="360_F_254979236_rH1eyiNIh8xFtDK0Gu4e04hBX2bCpqEX.jpg" class="game-img" alt="Capture the Flag Network">
@@ -429,7 +515,7 @@
                                     <li class="fragment fade-up"><strong>Stage 3:</strong> Secure Connection. Balance water on a frisbee.</li>
                                     <li class="fragment fade-up"><strong>Stage 4:</strong> Write New Code. Assemble Proverbs 4:23. First to shout it wins!</li>
                                 </ul>
-                                <p class="nav-hint">Press DOWN for Details</p>
+                                <p class="nav-hint">Swipe/Press DOWN for Details</p>
                             </div>
                             <div>
                                 <img src="relay-runners-exchanging-baton-track-dynamic-sports-illustration-with-teal-orange-uniforms_681100-1678.avif" class="game-img" alt="Relay Obstacle Course">
@@ -467,7 +553,7 @@
                             </ol>
                         </div>
                         <div>
-                            <img src="d82de961a4981796041ef7625e88b59c.jpg" class="game-img" style="border-color: #ff8c00; box-shadow: 0 0 50px rgba(255, 140, 0, 0.3); height: 800px; width: 100%; object-fit: contain;" alt="Youth Reflection Circle">
+                            <img src="d82de961a4981796041ef7625e88b59c.jpg" class="game-img reflection-img" alt="Youth Reflection Circle">
                         </div>
                     </div>
                 </div>
@@ -484,12 +570,11 @@
             progress: true,
             center: true,
             hash: true,
-            // Guaranteed Widescreen Resolution
-            width: 1920,      
-            height: 1080,      
-            margin: 0.06,      
-            minScale: 0.2,
-            maxScale: 2.0,
+            width: "100%",      
+            height: "100%",      
+            margin: 0,      
+            minScale: 1,
+            maxScale: 1,
             transition: 'slide', 
             backgroundTransition: 'fade',
         });
