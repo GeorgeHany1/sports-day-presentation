@@ -106,8 +106,10 @@
         .slide-container {
             width: 90%;
             max-width: 1400px;
-            max-height: 88vh; /* Prevents container from overflowing screen */
-            overflow-y: auto; /* Allows smooth scrolling inside the glass container if needed */
+            max-height: 85vh; 
+            overflow-y: auto; 
+            touch-action: pan-y pinch-zoom; 
+            overscroll-behavior-y: contain; 
             margin: 0 auto;
             text-align: left;
             padding: clamp(15px, 3vw, 30px);
@@ -134,7 +136,7 @@
         .game-img {
             width: 100%;
             height: auto;
-            max-height: 38vh; /* Slightly reduced to save vertical space */
+            max-height: 38vh; 
             object-fit: cover;
             border-radius: clamp(10px, 2vw, 20px);
             border: 2px solid rgba(0, 240, 255, 0.6);
@@ -233,17 +235,10 @@
            6. MOBILE OVERRIDES (Sub-992px)
         ----------------------------------- */
         @media (max-width: 992px) {
-            .reveal .slides section {
-                overflow-y: auto !important; 
-                max-height: 100% !important;
-                box-sizing: border-box;
-                padding: 10px 5px !important;
-            }
             .slide-container { 
                 padding: 20px 15px; 
                 border-radius: 16px;
                 background: rgba(17, 24, 39, 0.8); 
-                max-height: none; /* Let the section handle scrolling on mobile */
             }
             .split-grid {
                 grid-template-columns: 1fr;
@@ -559,6 +554,129 @@
                     </div>
                 </div>
             </section>
+
+            <!-- BACKUP GAMES MENU SLIDE -->
+            <section data-transition="zoom">
+                <div class="slide-container" style="text-align: center;">
+                    <h2 style="border: none; text-align: center;">Backup Systems</h2>
+                    <h3 style="color: #ff2a5f; text-align: center; border: none;">Emergency Game Protocols</h3>
+                    <hr style="width: 50%; margin: 25px auto;">
+                    <p style="text-align: center; font-size: clamp(18px, 2vw, 28px); color: #00f0ff;">
+                        Long Ball <span style="color:#64748b">|</span> Tchoukball <span style="color:#64748b">|</span> Chair Ball
+                    </p>
+                    <p class="nav-hint" style="margin-top: 30px !important;">Swipe to access backup games</p>
+                </div>
+            </section>
+
+            <!-- BACKUP GAME 1 -->
+            <section>
+                <section data-transition="slide">
+                    <div class="slide-container">
+                        <h2>Backup: Long Ball</h2>
+                        <p><strong>Goal:</strong> Asymmetric dodgeball—sprint the gauntlet and survive.</p>
+                        <hr>
+                        <div class="split-grid">
+                            <div>
+                                <h3>Mechanics & Rules</h3>
+                                <ul>
+                                    <li class="fragment fade-up"><strong>Setup:</strong> 1 Offense vs. 1 Defense (8 players). Safe zones at both ends.</li>
+                                    <li class="fragment fade-up">Offense throws the 1st ball into the field and sprints to the opposite safe zone.</li>
+                                    <li class="fragment fade-up"><span class="highlight-alt">The Twist:</span> A 2nd ball in the center activates once the 1st ball hits the ground. Defense uses both!</li>
+                                    <li class="fragment fade-up"><strong>Defense:</strong> Cannot move while holding a ball (1 pivot step max).</li>
+                                </ul>
+                                <p class="nav-hint">Swipe/Press DOWN for Scoring</p>
+                            </div>
+                            <div>
+                                <img src="imagesss.jpg" class="game-img" alt="Long Ball Dodgeball">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="slide-container">
+                        <h2>Long Ball: Scoring Details</h2>
+                        <hr>
+                        <ul>
+                            <li class="fragment fade-right"><strong>Scoring:</strong> 1 point every time a runner successfully returns to the STARTING safe zone without being hit.</li>
+                            <li class="fragment fade-right"><strong>Multiple Points:</strong> A single player can keep running back and forth to rack up points until they are tagged.</li>
+                            <li class="fragment fade-right"><strong>Elimination:</strong> You only sub out and go to the back of your team's line if you are hit by a ball.</li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+
+            <!-- BACKUP GAME 2 -->
+            <section>
+                <section data-transition="convex">
+                    <div class="slide-container">
+                        <h2>Backup: Tchoukball</h2>
+                        <p><strong>Goal:</strong> Fast-paced, non-contact rebounding game.</p>
+                        <hr>
+                        <div class="split-grid">
+                            <div>
+                                <h3>Mechanics & Rules</h3>
+                                <ul>
+                                    <li class="fragment fade-up"><strong>No Blocking:</strong> Defense cannot block or intercept passes/shots. They stop points ONLY by catching rebounds.</li>
+                                    <li class="fragment fade-up"><span class="highlight-alt">Rule of 3s:</span> Max 3 passes before shooting. Max 3 seconds holding the ball. Max 3 steps with the ball.</li>
+                                    <li class="fragment fade-up"><strong>Frames:</strong> Teams can attack and score on BOTH frames. Max 3 consecutive shots per frame.</li>
+                                </ul>
+                                <p class="nav-hint">Swipe/Press DOWN for Scoring</p>
+                            </div>
+                            <div>
+                                <img src="How-to-play-tchoukball.jpg" class="game-img" alt="Tchoukball">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="slide-container">
+                        <h2>Tchoukball: Scoring Details</h2>
+                        <hr>
+                        <ul>
+                            <li class="fragment fade-right"><strong>How to Score:</strong> A player throws the ball at the rebound frame.</li>
+                            <li class="fragment fade-right">If the ball bounces off the frame and <strong>lands on the floor</strong> outside the forbidden zone before the defense catches it, it's 1 point!</li>
+                            <li class="fragment fade-right">If the defending team catches the rebound before it hits the floor, no points are scored and play continues.</li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+
+            <!-- BACKUP GAME 3 -->
+            <section>
+                <section data-transition="concave">
+                    <div class="slide-container">
+                        <h2>Backup: Chair Ball</h2>
+                        <p><strong>Goal:</strong> Strategic passing and court awareness to reach the target.</p>
+                        <hr>
+                        <div class="split-grid">
+                            <div>
+                                <h3>Mechanics & Rules</h3>
+                                <ul>
+                                    <li class="fragment fade-up"><strong>Setup:</strong> Teams are scattered. One "Catcher" per team stands inside a hula hoop at opposite ends.</li>
+                                    <li class="fragment fade-up"><strong>Objective:</strong> Score by successfully delivering the ball to your Catcher.</li>
+                                    <li class="fragment fade-up"><span class="highlight-alt">Blocking Rule:</span> If a player tries to block a pass and knocks the ball to the ground, they must take possession of it.</li>
+                                </ul>
+                                <p class="nav-hint">Swipe/Press DOWN for the 3x3 Rule</p>
+                            </div>
+                            <div>
+                                <img src="930b0d085ed39ec50eee25c9e3a3da1b.jpg" class="game-img" alt="Chair Ball Passing">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="slide-container">
+                        <h2>Chair Ball: The 3x3 Rule</h2>
+                        <hr>
+                        <ul>
+                            <li class="fragment fade-right"><strong>3 Passes:</strong> Your team must complete at least 3 consecutive passes among yourselves before passing to the Catcher in the hula hoop.</li>
+                            <li class="fragment fade-right"><strong>3 Steps:</strong> You cannot take more than 3 steps while holding the ball.</li>
+                            <li class="fragment fade-right"><strong>3 Seconds:</strong> You cannot hold the ball in your hands for more than 3 seconds. Pass or lose possession!</li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+            <!-- END BACKUP GAMES -->
 
             <!-- PHASE 2: GOING VIRAL -->
             <section>
